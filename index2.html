@@ -1,0 +1,74 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<style>
+td
+{
+padding:20px;
+}
+label {
+    font: normal 22px arial !important;
+}
+input
+{
+    font: normal 22px arial !important;
+    height: 30px;
+    width: 300px;
+	
+}
+
+
+
+</style>
+</head>
+<body>
+<h1>HOME</h1>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119172463-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119172463-1');
+</script>
+
+
+
+<button onclick="myFunction()">Click me</button>
+
+
+
+<form id="signup-form" onsubmit='return validate()' action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+
+<input type=hidden name="oid" value="00D28000001zh8t">
+<input type=hidden name="retURL" value="https://anhtnt90.github.io/SalesforceGA/">
+ 
+<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+
+<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+
+<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+
+<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+
+cid:<input  id="00N0K00000K4M0v" maxlength="30" name="00N0K00000K4M0v" size="20" type="text" /><br>
+
+<input type="submit" name="submit">
+
+</form>
+
+
+
+
+
+
+
+</body>
+</html>
