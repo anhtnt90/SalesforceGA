@@ -39,7 +39,7 @@ input
 ga(function(tracker) {
   var clientId = tracker.get('clientId');
   console.log('clientid='+clientId);
-  document.getElementById('00Ni0000002oiOt').value=clientId;
+  document.getElementById('00N0K00000K4M0v').value=clientId;
 });
 
 ga('create', {
@@ -130,27 +130,33 @@ ga('send', {
 
 <button onclick="myFunction()">Click me</button>
 
-<table>
 
- <form id="signup-form" onsubmit='return validate()' action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<form id="signup-form" onsubmit='return validate()' action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
 
 <input type=hidden name="oid" value="00D28000001zh8t">
-<input type=hidden name="retURL" value="http://infotrustdev.com/playground_alex/uasf/thankyou.php">
+<input type=hidden name="retURL" value="https://anhtnt90.github.io/SalesforceGA/">
  
-<tr><td><label for="first_name">First Name</label></td><td><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /></td></tr>
+<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 
-<tr><td><label for="last_name">Last Name</label></td><td><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /></td></tr>
+<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
 
-<tr><td><label for="email">Email</label></td><td><input  id="email" maxlength="80" name="email" size="20" type="text" /></td></tr>
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-<tr><td><label for="company">Company</label></td><td><input  id="company" maxlength="40" name="company" size="20" type="text" /></td></tr>
+<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
 
-<tr><td><label for="00Ni0000002oiOt">cid</label></td><td><input  id="00Ni0000002oiOt" maxlength="255" name="00Ni0000002oiOt" size="20" type="text" /></td></tr>
+<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
 
-<tr><td colspan="2" align="center"><input style="height:40px" type="submit" name="submit" value="Send Lead to Salesforce.com"></td></tr>
+<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+
+cid:<input  id="00N0K00000K4M0v" maxlength="30" name="00N0K00000K4M0v" size="20" type="text" /><br>
+
+<input type="submit" name="submit">
 
 </form>
-</table>
+
+
 
 
 
