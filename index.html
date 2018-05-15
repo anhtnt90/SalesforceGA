@@ -33,12 +33,32 @@ input
   ga('create', 'UA-119172463-1', 'auto');
   ga('send', 'pageview');
 
+
 </script>
 <script>
 ga(function(tracker) {
   var clientId = tracker.get('clientId');
   console.log('clientid='+clientId);
   document.getElementById('00Ni0000002oiOt').value=clientId;
+});
+
+ga('create', {
+	  trackingId: 'UA-119172463-1',
+	  cookieDomain: 'auto',
+	  name: 'myTracker',
+	  userId: '12345'
+	});
+
+ga(function(tracker) {
+  // Logs the trackers name.
+  // (Note: default trackers are given the name "t0")
+  console.log('name: ' + tracker.get('name'));
+
+  // Logs the client ID for the current user.
+  console.log('clientId: ' +tracker.get('clientId'));
+
+  // Logs the URL of the referring site (if available).
+  console.log('referrer: ' + tracker.get('referrer'));
 });
 
 function validate()
@@ -69,11 +89,50 @@ function validate()
 	}			
 	return true;
 }
+
+function myFunction() {
+  ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Download',
+	  eventAction: 'Click',
+	  eventLabel: 'Download book'
+	});
+}
+
+
+// Gets a reference to the form element, assuming
+// it contains the id attribute "signup-form".
+var form = document.getElementById('signup-form');
+
+// Adds a listener for the "submit" event.
+form.addEventListener('submit', function(event) {
+
+  // Prevents the browser from submitting the form
+  // and thus unloading the current page.
+  event.preventDefault();
+
+  // Sends the event to Google Analytics and
+  // resubmits the form once the hit is done.
+  ga('send', 'event', 'Signup Form', 'submit', {
+    hitCallback: function() {
+      form.submit();
+    }
+  });
+});
+
+
+ga('send', {
+  hitType: 'pageview',
+  page: 'home'
+});
+
 </script>
+
+<button onclick="myFunction()">Click me</button>
 
 <table>
 
- <form onsubmit='return validate()' action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+ <form id="signup-form" onsubmit='return validate()' action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
 <input type=hidden name="oid" value="00D28000001zh8t">
 <input type=hidden name="retURL" value="http://infotrustdev.com/playground_alex/uasf/thankyou.php">
