@@ -42,7 +42,7 @@ input
 
   ga('create', 'UA-119172463-1', {'userId': customUserId});   // If "User ID" feature is available
   ga('require', 'displayfeatures');
-  ga('require', 'ecommerce');
+  ga('require', 'ec');
   ga('set', 'dimension1', customUserId);                  // Set a `customUserId` dimension at page level
   ga('send', 'pageview');
 
@@ -149,25 +149,30 @@ if (window.performance) {
 }
 
 
-//Ecommerce
-ga('ecommerce:addTransaction', {
-  'id': '1234',                     // Transaction ID. Required.
-  'affiliation': 'Acme Clothing',   // Affiliation or store name.
-  'revenue': '11.99',               // Grand Total.
-  'shipping': '5',                  // Shipping.
-  'tax': '1.29'                     // Tax.
+
+
+ga('set', 'currencyCode', 'EUR'); // Set tracker currency to Euros.
+
+ga('ec:addProduct', {
+  'id': 'P12345',
+  'name': 'Android Warhol T-Shirt',
+  'category': 'Apparel',
+  'brand': 'Google',
+  'variant': 'black',
+  'price': '21.89',
+  'quantity': 1
 });
 
-ga('ecommerce:addItem', {
-  'id': '1234',                     // Transaction ID. Required.
-  'name': 'Fluffy Pink Bunnies',    // Product name. Required.
-  'sku': 'DD23444',                 // SKU/code.
-  'category': 'Party Toys',         // Category or variation.
-  'price': '11.99',                 // Unit price.
-  'quantity': '1'                   // Quantity.
+ga('ec:setAction', 'purchase', {
+  id: 'T12345',
+  affiliation: 'Google Store - Online',
+  revenue: '28.03',
+  tax: '2.14',
+  shipping: '4.00',
+  coupon: 'SUMMER2013'
 });
 
-ga('ecommerce:send');
+ga('send', 'pageview');
 
 </script>
 
