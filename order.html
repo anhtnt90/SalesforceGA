@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thank you for your order</title>
+</head>
+<body>
+
+<h1>Thank you for your order</h1>
+<p>A receipt has been sent to you@youremail.com</p>
+
+<!-- standard GA code -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-119172463-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+// enable the ecommerce features
+ga('require', 'ecommerce');
+
+// start the transaction
+ga('ecommerce:addTransaction', {
+  'id': '10001',
+  'affiliation': 'My Cool Store',
+  'revenue': '54.97',
+  'shipping': '5.00',
+  'tax': '0.00'
+});
+
+// add item 1
+ga('ecommerce:addItem', {
+  'id': '10001',
+  'name': 'Learn HTML',
+  'sku': 'BOOK00001',
+  'category': 'book',
+  'price': '14.99',
+  'quantity': '1'
+});
+
+// add item 2
+ga('ecommerce:addItem', {
+  'id': '10001',
+  'name': 'Learn CSS',
+  'sku': 'BOOK00002',
+  'category': 'book',
+  'price': '14.99',
+  'quantity': '1'
+});
+
+// add item 3
+ga('ecommerce:addItem', {
+  'id': '10001',
+  'name': 'Learn JavaScript',
+  'sku': 'BOOK00003',
+  'category': 'book',
+  'price': '19.99',
+  'quantity': '1'
+});
+
+// send transaction
+ga('ecommerce:send');
+</script>
+</body>
+</html>
